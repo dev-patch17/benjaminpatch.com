@@ -357,7 +357,7 @@ When you are finished with your coding session, deactivate the virtual environme
 deactivate
 ```
 
-If needed, you can then switch to another virtual environment running a different version of Python and/or packages to see how these new environments affect your program. 
+If needed, you can then switch to another virtual environment running a different version of Python and/or packages to see how these new environments affect your program.
 
 ## Remove a Virtual Environment
 
@@ -395,7 +395,15 @@ Anytime your dependencies change, simply re-run the command above, and `requirem
 pip install -r requirements.txt
 ```
 
-Unfortunately, `pip` does not record the version of Python running in this environment. I recommend adding this as a note on your project’s `README` or other documentation so you and others have a record of the exact environment variables of when the program was built and tested.
+## Set a Local Python Version
+
+In most cases, it is also a good idea to require a specific version of Python to run your project. From your project's root directory, set this by running:
+
+```bash
+pyenv local 3.13.2 # replace with your desired Python version number
+```
+
+This creates a `.python-version` file which tells your system which version of Python to use.
 
 ---
 
