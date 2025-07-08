@@ -405,7 +405,7 @@ For managing multiple Python versions on your system while creating isolated dev
 
 This guide has helped us create a simple, clean, and flexible virtual development environment.
 
-If you found this helpful and would like me to write guides for more advanced dependency management with tools like [Pipenv](https://packaging.python.org/en/latest/tutorials/managing-dependencies/) or [Poetry](https://python-poetry.org/), please contact me on Bluesky [@benjaminpatch.com](https://bsky.app/profile/benjaminpatch.com).
+If you found this helpful and would like me to write guides for more advanced dependency management with tools like [Poetry](https://python-poetry.org/) or [uv](https://docs.astral.sh/uv/), please contact me on Bluesky [@benjaminpatch.com](https://bsky.app/profile/benjaminpatch.com).
 
 Thanks for reading and I wish you the best in creating and managing all of your Python virtual environments!
 
