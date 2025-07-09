@@ -44,6 +44,10 @@ git remote set-head origin -a
 
 ## Release Notes
 
+### 2025.07.09
+
+- Publish "Python Kickstart (part 2)" article.
+
 ### 2025.05.21
 
 - Correct a typo in "When Vibe Coding Fails."
