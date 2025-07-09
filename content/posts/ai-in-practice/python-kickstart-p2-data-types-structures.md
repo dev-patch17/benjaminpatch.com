@@ -1,5 +1,5 @@
 Title: Python Kickstart (part 2): Data Types and Data Structures
-Date: 2025-07-09 00:17
+Date: 2025-07-09 09:58
 Category: AI in Practice
 Tags: python, python kickstart, best practices, open-source
 Slug: python-kickstart-p2-data-types-structures
