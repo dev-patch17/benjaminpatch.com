@@ -214,7 +214,9 @@ In Python, there are three basic data types:
 - Numbers
 - Booleans
 
-Coming up in this **Python Kickstart** series, we'll be diving into basic data types and structures. To ensure you don't miss it, please subscribe to [this blog's RSS feed](https://www.benjaminpatch.com/feeds/all.atom.xml) and follow me on Bluesky: [@benjaminpatch.com](https://bsky.app/profile/benjaminpatch.com). Thanks for your interest in learning Python, and I'll catch you next time!
+The next article in this series dives into these data types and then continues with data structures, which are both crucial in writing effective Python programs. Thanks for your interest in learning Python, and I'll catch you next time!
+
+Up next: [Python Kickstart (part 2): Data Types and Data Structures](https://www.benjaminpatch.com/posts/2025/Jul/09/python-kickstart-p2-data-types-structures/)
 
 <a id="works-cited"></a>
 ## Works Cited
