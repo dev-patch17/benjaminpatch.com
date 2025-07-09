@@ -6,7 +6,7 @@ Slug: python-kickstart-p2-data-types-structures
 Description: Learn how and when to use Python's fundamental building blocks: data types and data structures, which are crucial for writing effective Python programs.
 Summary: Let's dive deeper into Python's fundamental building blocks: data types and data structures. Understanding these concepts is crucial for writing effective Python programs. Think of data types as the different kinds of information your program can work with, while data structures are the containers that organize and store that information. Let's get started!
 
-Welcome back to our Python Kickstart series! In part 1, we covered the basics of Python installation, variables, the `print()` function, and got our feet wet with running Python code. Now it's time to dive deeper into Python's fundamental building blocks: data types and data structures.
+Welcome back to our Python Kickstart series! In [part 1](https://www.benjaminpatch.com/posts/2025/May/13/when-vibe-coding-fails-python-kickstart-p1/), we covered the basics of Python installation, variables, the `print()` function, and got our feet wet with running Python code. Now it's time to dive deeper into Python's fundamental building blocks: data types and data structures.
 
 Understanding these concepts is crucial for writing effective Python programs. Think of data types as the different kinds of information your program can work with, while data structures are the containers that organize and store that information. Just like a film director needs to understand different shot types and how to arrange them into scenes, a Python programmer needs to master these foundational elements.
 
