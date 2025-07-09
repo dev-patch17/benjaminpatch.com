@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <title>Python Kickstart (part 2): Data Types and Data Structures - Benjamin Patch</title>
+      <meta charset="utf-8" />
+      <meta name="generator" content="Pelican" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+        <link href="https://www.benjaminpatch.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Benjamin Patch Full Atom Feed" />
+        <link href="https://www.benjaminpatch.com/feeds/ai-in-practice.atom.xml" type="application/atom+xml" rel="alternate" title="Benjamin Patch Categories Atom Feed" />
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DHY8WE47S"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-0DHY8WE47S');
+        </script>
+
+
+
+    <meta name="description" content="Learn how and when to use Python's fundamental building blocks: data types and data structures, which are crucial for writing effective Python programs." />
+
+    <meta name="tags" content="python" />
+    <meta name="tags" content="python kickstart" />
+    <meta name="tags" content="best practices" />
+    <meta name="tags" content="open-source" />
+
+  </head>
+
+  <body class="container">
+    <header class="text-center p-3 m-1 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+      <hgroup><h1><a class="link-offset-2 link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+        href="https://www.benjaminpatch.com/"><i class="bi bi-house-door"></i> Benjamin Patch</a></h1><p>Guides for Building Ethical & Impactful AI Software</p></hgroup>
+      <nav><ul class="nav nav-underline nav-justified">
+            <li class="nav-item"><a href="https://www.benjaminpatch.com/about/"  class="nav-link" >About</a></li>
+            <li class="nav-item"><a href="https://www.benjaminpatch.com/category/ai-ethos/"  class="nav-link" >AI Ethos</a></li>
+            <li class="nav-item"><a href="https://www.benjaminpatch.com/category/ai-fundamentals/"  class="nav-link" >AI Fundamentals</a></li>
+            <li class="nav-item"><a href="https://www.benjaminpatch.com/category/ai-in-practice/"  class="nav-link active" aria-current="page" >AI in Practice</a></li>
+      </ul></nav>
+    </header>
+    <main class="col-md-8 offset-md-2 col-xl-6 offset-xl-3 p-1">
+  <article>
+    <header>
+      <h1>Python Kickstart (part 2): Data Types and Data Structures</h1>
+      
+      <p>
+        Written by         <a href="https://www.benjaminpatch.com/author/benjamin-patch/">Benjamin Patch</a>
+      </p>
+      <p>Published: <time datetime="2025-07-09T09:58:00-07:00">
+        Wed 09 July 2025
+      </time></p>
+    </header>
+    <hr>
+    <p>Welcome back to our Python Kickstart series! In <a href="https://www.benjaminpatch.com/posts/2025/May/13/when-vibe-coding-fails-python-kickstart-p1/">part 1</a>, we covered the basics of Python installation, variables, the <code>print()</code> function, and got our feet wet with running Python code. Now it's time to dive deeper into Python's fundamental building blocks: data types and data structures.</p>
+<p>Understanding these concepts is crucial for writing effective Python programs. Think of data types as the different kinds of information your program can work with, while data structures are the containers that organize and store that information. Just like a film director needs to understand different shot types and how to arrange them into scenes, a Python programmer needs to master these foundational elements.</p>
+<h2>Three Basic Data Types</h2>
+<p>Python has three basic data types that you'll use constantly: strings, numbers, and booleans. Let's explore each one with fun examples from movies!</p>
+<h3>Strings</h3>
+<p>Strings are sequences of characters enclosed in quotes. They're perfect for storing text data like movie titles, actor names, or dialogue. You can use either single quotes (<code>'</code>) or double quotes (<code>"</code>), but be consistent within your project.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Movie titles and names</span>
+<span class="n">movie_title</span> <span class="o">=</span> <span class="s2">&quot;The Shawshank Redemption&quot;</span>
+<span class="n">director</span> <span class="o">=</span> <span class="s2">&quot;Frank Darabont&quot;</span>
+<span class="n">lead_actor</span> <span class="o">=</span> <span class="s1">&#39;Tim Robbins&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">movie_title</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Directed by: </span><span class="si">{</span><span class="n">director</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starring: </span><span class="si">{</span><span class="n">lead_actor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Notice the <code>f</code> before the string in the last two print statements? This creates an <strong>f-string</strong> (formatted string literal), which lets you embed variables directly inside strings using curly braces <code>{}</code>. This is much cleaner than concatenating strings with <code>+</code>.</p>
+<p>You can also create multi-line strings using triple quotes:</p>
+<div class="highlight"><pre><span></span><code><span class="n">movie_review</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">The Godfather is a masterpiece of American cinema.</span>
+<span class="s2">Francis Ford Coppola&#39;s direction combined with </span>
+<span class="s2">Marlon Brando&#39;s iconic performance creates </span>
+<span class="s2">an unforgettable experience.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">movie_review</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>Numbers</h3>
+<p>Python handles two main types of numbers: integers (whole numbers) and floats (decimal numbers). Both are incredibly useful for storing numerical data.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Integers</span>
+<span class="n">release_year</span> <span class="o">=</span> <span class="mi">1972</span>
+<span class="n">runtime_minutes</span> <span class="o">=</span> <span class="mi">175</span>
+<span class="n">box_office_millions</span> <span class="o">=</span> <span class="mi">286</span>
+
+<span class="c1"># Floats</span>
+<span class="n">imdb_rating</span> <span class="o">=</span> <span class="mf">9.2</span>
+<span class="n">rotten_tomatoes_score</span> <span class="o">=</span> <span class="mf">97.5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The Godfather (</span><span class="si">{</span><span class="n">release_year</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Runtime: </span><span class="si">{</span><span class="n">runtime_minutes</span><span class="si">}</span><span class="s2"> minutes&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Box office: $</span><span class="si">{</span><span class="n">box_office_millions</span><span class="si">}</span><span class="s2"> million&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;IMDB Rating: </span><span class="si">{</span><span class="n">imdb_rating</span><span class="si">}</span><span class="s2">/10&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rotten Tomatoes: </span><span class="si">{</span><span class="n">rotten_tomatoes_score</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>You can perform mathematical operations on numbers:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Calculate decades since release</span>
+<span class="n">current_year</span> <span class="o">=</span> <span class="mi">2025</span>
+<span class="n">decades_since_release</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_year</span> <span class="o">-</span> <span class="n">release_year</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The Godfather was released </span><span class="si">{</span><span class="n">decades_since_release</span><span class="si">}</span><span class="s2"> decades ago&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>Booleans</h3>
+<p>Booleans represent truth values: either <code>True</code> or <code>False</code>. They're essential for decision-making in your programs and are often the result of comparisons.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Boolean values</span>
+<span class="n">is_classic</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">won_oscar</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">is_sequel</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Comparison operations that return booleans</span>
+<span class="n">is_highly_rated</span> <span class="o">=</span> <span class="n">imdb_rating</span> <span class="o">&gt;</span> <span class="mf">9.0</span>
+<span class="n">is_long_movie</span> <span class="o">=</span> <span class="n">runtime_minutes</span> <span class="o">&gt;</span> <span class="mi">180</span>
+<span class="n">is_recent</span> <span class="o">=</span> <span class="n">release_year</span> <span class="o">&gt;</span> <span class="mi">2000</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Is it a classic? </span><span class="si">{</span><span class="n">is_classic</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Highly rated? </span><span class="si">{</span><span class="n">is_highly_rated</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Long movie? </span><span class="si">{</span><span class="n">is_long_movie</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recent film? </span><span class="si">{</span><span class="n">is_recent</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Common Data Type Mistakes</h2>
+<p>Let's look at some errors beginners often encounter with data types:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Mixing strings and numbers without conversion</span>
+<span class="n">year</span> <span class="o">=</span> <span class="s2">&quot;1968&quot;</span>
+<span class="n">current_year</span> <span class="o">=</span> <span class="mi">2025</span>
+
+<span class="c1"># This will cause a TypeError</span>
+<span class="c1"># age_of_movie = current_year - year  # Error!</span>
+
+<span class="c1"># Instead, convert the string to an integer</span>
+<span class="n">age_of_movie</span> <span class="o">=</span> <span class="n">current_year</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;2001: A Space Odyssey is </span><span class="si">{</span><span class="n">age_of_movie</span><span class="si">}</span><span class="s2"> years old&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Another common mistake is forgetting quotes around strings:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># This will cause a NameError</span>
+<span class="c1"># director = Stanley Kubrick  # Error!</span>
+
+<span class="c1"># Correct way:</span>
+<span class="n">director</span> <span class="o">=</span> <span class="s2">&quot;Stanley Kubrick&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">director</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Python Data Structures</h2>
+<p>Now that we understand basic data types, let's explore Python's built-in data structures. These are containers that hold multiple pieces of data and are incredibly powerful for organizing information.</p>
+<h3>Lists</h3>
+<p>Lists are ordered collections of items that can be changed (mutable). They're perfect for storing sequences of related data like movie collections or cast members.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Creating lists</span>
+<span class="n">kubrick_films</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2001: A Space Odyssey&quot;</span><span class="p">,</span> <span class="s2">&quot;The Shining&quot;</span><span class="p">,</span> <span class="s2">&quot;A Clockwork Orange&quot;</span><span class="p">,</span> <span class="s2">&quot;Dr. Strangelove&quot;</span><span class="p">]</span>
+<span class="n">box_office_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">190.7</span><span class="p">,</span> <span class="mf">47.0</span><span class="p">,</span> <span class="mf">26.6</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">]</span>
+<span class="n">directors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Stanley Kubrick&quot;</span><span class="p">,</span> <span class="s2">&quot;Orson Welles&quot;</span><span class="p">,</span> <span class="s2">&quot;Christopher Nolan&quot;</span><span class="p">,</span> <span class="s2">&quot;Greta Gerwig&quot;</span><span class="p">]</span>
+
+<span class="c1"># Accessing list items (indexing starts at 0)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First Kubrick film in our list: </span><span class="si">{</span><span class="n">kubrick_films</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Last director: </span><span class="si">{</span><span class="n">directors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Negative indexing starts from the end</span>
+
+<span class="c1"># Adding items to lists</span>
+<span class="n">kubrick_films</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Full Metal Jacket&quot;</span><span class="p">)</span>
+<span class="n">directors</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Martin Scorsese&quot;</span><span class="p">)</span>  <span class="c1"># Insert at specific position</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Updated Kubrick films: </span><span class="si">{</span><span class="n">kubrick_films</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Updated directors: </span><span class="si">{</span><span class="n">directors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Lists support many useful methods:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># More list operations</span>
+<span class="n">nolan_films</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Inception&quot;</span><span class="p">,</span> <span class="s2">&quot;Interstellar&quot;</span><span class="p">,</span> <span class="s2">&quot;The Dark Knight&quot;</span><span class="p">,</span> <span class="s2">&quot;Dunkirk&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of films: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">nolan_films</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Is &#39;Inception&#39; in the list? </span><span class="si">{</span><span class="s1">&#39;Inception&#39;</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">nolan_films</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Sorting</span>
+<span class="n">nolan_films</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Alphabetically sorted: </span><span class="si">{</span><span class="n">nolan_films</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>Tuples</h3>
+<p>Tuples are like lists, but they're immutable (cannot be changed after creation). They're perfect for storing related data that should stay together, like movie information.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Creating tuples</span>
+<span class="n">citizen_kane</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Citizen Kane&quot;</span><span class="p">,</span> <span class="mi">1941</span><span class="p">,</span> <span class="s2">&quot;Orson Welles&quot;</span><span class="p">,</span> <span class="mi">119</span><span class="p">)</span>
+<span class="n">casablanca</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Casablanca&quot;</span><span class="p">,</span> <span class="mi">1942</span><span class="p">,</span> <span class="s2">&quot;Michael Curtiz&quot;</span><span class="p">,</span> <span class="mi">102</span><span class="p">)</span>
+
+<span class="c1"># Unpacking tuples</span>
+<span class="n">title</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">director</span><span class="p">,</span> <span class="n">runtime</span> <span class="o">=</span> <span class="n">citizen_kane</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">) directed by </span><span class="si">{</span><span class="n">director</span><span class="si">}</span><span class="s2">, runtime: </span><span class="si">{</span><span class="n">runtime</span><span class="si">}</span><span class="s2"> minutes&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tuples are immutable - this would cause an error:</span>
+<span class="c1"># citizen_kane[0] = &quot;Kane&quot;  # Error!</span>
+</code></pre></div>
+
+<p>Tuples are often used for coordinates, database records, or any grouped data that shouldn't change:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Movie ratings (title, imdb_rating, rotten_tomatoes)</span>
+<span class="n">movie_ratings</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;The Godfather&quot;</span><span class="p">,</span> <span class="mf">9.2</span><span class="p">,</span> <span class="mi">97</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Schindler&#39;s List&quot;</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mi">98</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Pulp Fiction&quot;</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mi">92</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">title</span><span class="p">,</span> <span class="n">imdb</span><span class="p">,</span> <span class="n">rt</span> <span class="ow">in</span> <span class="n">movie_ratings</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">: IMDB </span><span class="si">{</span><span class="n">imdb</span><span class="si">}</span><span class="s2">, RT </span><span class="si">{</span><span class="n">rt</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>Sets</h3>
+<p>Sets are unordered collections of unique items. They're excellent for removing duplicates and performing set operations like finding common elements.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Creating sets</span>
+<span class="n">scorsese_actors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Robert De Niro&quot;</span><span class="p">,</span> <span class="s2">&quot;Leonardo DiCaprio&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe Pesci&quot;</span><span class="p">,</span> <span class="s2">&quot;Robert De Niro&quot;</span><span class="p">}</span>
+<span class="n">tarantino_actors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Samuel L. Jackson&quot;</span><span class="p">,</span> <span class="s2">&quot;Uma Thurman&quot;</span><span class="p">,</span> <span class="s2">&quot;Leonardo DiCaprio&quot;</span><span class="p">,</span> <span class="s2">&quot;John Travolta&quot;</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scorsese actors: </span><span class="si">{</span><span class="n">scorsese_actors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Notice duplicate removed</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tarantino actors: </span><span class="si">{</span><span class="n">tarantino_actors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set operations</span>
+<span class="n">common_actors</span> <span class="o">=</span> <span class="n">scorsese_actors</span> <span class="o">&amp;</span> <span class="n">tarantino_actors</span>  <span class="c1"># Intersection</span>
+<span class="n">all_actors</span> <span class="o">=</span> <span class="n">scorsese_actors</span> <span class="o">|</span> <span class="n">tarantino_actors</span>     <span class="c1"># Union</span>
+<span class="n">scorsese_only</span> <span class="o">=</span> <span class="n">scorsese_actors</span> <span class="o">-</span> <span class="n">tarantino_actors</span>  <span class="c1"># Difference</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actors who worked with both: </span><span class="si">{</span><span class="n">common_actors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;All actors: </span><span class="si">{</span><span class="n">all_actors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Only in Scorsese films: </span><span class="si">{</span><span class="n">scorsese_only</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Sets are also useful for checking membership quickly:</p>
+<div class="highlight"><pre><span></span><code><span class="n">oscar_winners</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Meryl Streep&quot;</span><span class="p">,</span> <span class="s2">&quot;Tom Hanks&quot;</span><span class="p">,</span> <span class="s2">&quot;Frances McDormand&quot;</span><span class="p">,</span> <span class="s2">&quot;Daniel Day-Lewis&quot;</span><span class="p">}</span>
+
+<span class="n">actors_to_check</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Tom Hanks&quot;</span><span class="p">,</span> <span class="s2">&quot;Ryan Gosling&quot;</span><span class="p">,</span> <span class="s2">&quot;Meryl Streep&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">actor</span> <span class="ow">in</span> <span class="n">actors_to_check</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">actor</span> <span class="ow">in</span> <span class="n">oscar_winners</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">actor</span><span class="si">}</span><span class="s2"> is an Oscar winner!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">actor</span><span class="si">}</span><span class="s2"> hasn&#39;t won an Oscar yet.&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>Dictionaries</h3>
+<p>Dictionaries store key-value pairs and are incredibly useful for structured data. Think of them as lookup tables where each key maps to a value.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Creating dictionaries</span>
+<span class="n">the_godfather</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;The Godfather&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1972</span><span class="p">,</span>
+    <span class="s2">&quot;director&quot;</span><span class="p">:</span> <span class="s2">&quot;Francis Ford Coppola&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;runtime&quot;</span><span class="p">:</span> <span class="mi">175</span><span class="p">,</span>
+    <span class="s2">&quot;genre&quot;</span><span class="p">:</span> <span class="s2">&quot;Crime Drama&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;imdb_rating&quot;</span><span class="p">:</span> <span class="mf">9.2</span>
+<span class="p">}</span>
+
+<span class="c1"># Accessing dictionary values</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Movie: </span><span class="si">{</span><span class="n">the_godfather</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Director: </span><span class="si">{</span><span class="n">the_godfather</span><span class="p">[</span><span class="s1">&#39;director&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Year: </span><span class="si">{</span><span class="n">the_godfather</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Adding new key-value pairs</span>
+<span class="n">the_godfather</span><span class="p">[</span><span class="s2">&quot;box_office&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">286000000</span>
+<span class="n">the_godfather</span><span class="p">[</span><span class="s2">&quot;lead_actor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Marlon Brando&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Box office: $</span><span class="si">{</span><span class="n">the_godfather</span><span class="p">[</span><span class="s1">&#39;box_office&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Dictionaries are perfect for more complex data structures:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Movie database</span>
+<span class="n">movie_database</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;kubrick&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Stanley Kubrick&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;notable_films&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;2001: A Space Odyssey&quot;</span><span class="p">,</span> <span class="s2">&quot;The Shining&quot;</span><span class="p">,</span> <span class="s2">&quot;A Clockwork Orange&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;birth_year&quot;</span><span class="p">:</span> <span class="mi">1928</span><span class="p">,</span>
+        <span class="s2">&quot;nationality&quot;</span><span class="p">:</span> <span class="s2">&quot;American&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;welles&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Orson Welles&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;notable_films&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Citizen Kane&quot;</span><span class="p">,</span> <span class="s2">&quot;The Third Man&quot;</span><span class="p">,</span> <span class="s2">&quot;Touch of Evil&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;birth_year&quot;</span><span class="p">:</span> <span class="mi">1915</span><span class="p">,</span>
+        <span class="s2">&quot;nationality&quot;</span><span class="p">:</span> <span class="s2">&quot;American&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Accessing nested data</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stanley Kubrick&#39;s films: </span><span class="si">{</span><span class="n">movie_database</span><span class="p">[</span><span class="s1">&#39;kubrick&#39;</span><span class="p">][</span><span class="s1">&#39;notable_films&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Orson Welles was born in </span><span class="si">{</span><span class="n">movie_database</span><span class="p">[</span><span class="s1">&#39;welles&#39;</span><span class="p">][</span><span class="s1">&#39;birth_year&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Iterating through dictionaries</span>
+<span class="k">for</span> <span class="n">director_key</span><span class="p">,</span> <span class="n">director_info</span> <span class="ow">in</span> <span class="n">movie_database</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">director_info</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">director_info</span><span class="p">[</span><span class="s1">&#39;nationality&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">film</span> <span class="ow">in</span> <span class="n">director_info</span><span class="p">[</span><span class="s1">&#39;notable_films&#39;</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - </span><span class="si">{</span><span class="n">film</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Common Data Structure Mistakes</h2>
+<p>Here are some errors to watch out for:</p>
+<p><strong>List Index Errors:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">actors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Tom Hanks&quot;</span><span class="p">,</span> <span class="s2">&quot;Meryl Streep&quot;</span><span class="p">,</span> <span class="s2">&quot;Robert De Niro&quot;</span><span class="p">]</span>
+
+<span class="c1"># This will cause an IndexError</span>
+<span class="c1"># print(actors[5])  # Error! List only has 3 items (indices 0, 1, 2)</span>
+
+<span class="c1"># Safe way to access:</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">actors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">actors</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not enough actors in the list&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p><strong>Dictionary Key Errors:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">movie</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Inception&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2010</span><span class="p">}</span>
+
+<span class="c1"># This will cause a KeyError</span>
+<span class="c1"># print(movie[&quot;director&quot;])  # Error! Key doesn&#39;t exist</span>
+
+<span class="c1"># Safe ways to access:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">movie</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;director&quot;</span><span class="p">,</span> <span class="s2">&quot;Director unknown&quot;</span><span class="p">))</span>
+<span class="c1"># or</span>
+<span class="k">if</span> <span class="s2">&quot;director&quot;</span> <span class="ow">in</span> <span class="n">movie</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s2">&quot;director&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<h2>When to Use Each Data Structure</h2>
+<p>Here's a practical guide for choosing the right data structure:</p>
+<ul>
+<li><strong>Lists</strong>: When you need an ordered, changeable collection (movie watchlist, cast in order of appearance)</li>
+<li><strong>Tuples</strong>: When you need an ordered, unchangeable collection (movie details, coordinates)</li>
+<li><strong>Sets</strong>: When you need unique items or set operations (genres, avoiding duplicate actors)</li>
+<li><strong>Dictionaries</strong>: When you need key-value relationships (movie details, actor information)</li>
+</ul>
+<h2>Bringing It All Together</h2>
+<p>Let's create a practical example that combines multiple data types and structures:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Movie recommendation system</span>
+<span class="n">movie_collection</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;drama&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;The Shawshank Redemption&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1994</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="mf">9.3</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Schindler&#39;s List&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1993</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="mf">9.0</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;12 Angry Men&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1957</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="mf">9.0</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;sci_fi&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;2001: A Space Odyssey&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1968</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="mf">8.3</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Blade Runner&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">1982</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="mf">8.1</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Interstellar&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2014</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">:</span> <span class="mf">8.6</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Function to recommend movies by genre</span>
+<span class="k">def</span> <span class="nf">recommend_movies</span><span class="p">(</span><span class="n">genre</span><span class="p">,</span> <span class="n">min_rating</span><span class="o">=</span><span class="mf">8.0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">genre</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">movie_collection</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Sorry, no </span><span class="si">{</span><span class="n">genre</span><span class="si">}</span><span class="s2"> movies in our collection.&quot;</span>
+
+    <span class="n">recommendations</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">movie_collection</span><span class="p">[</span><span class="n">genre</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">movie</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">min_rating</span><span class="p">:</span>
+            <span class="n">recommendations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">) - </span><span class="si">{</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">recommendations</span>
+
+<span class="c1"># Get recommendations</span>
+<span class="n">drama_recs</span> <span class="o">=</span> <span class="n">recommend_movies</span><span class="p">(</span><span class="s2">&quot;drama&quot;</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">)</span>
+<span class="n">sci_fi_recs</span> <span class="o">=</span> <span class="n">recommend_movies</span><span class="p">(</span><span class="s2">&quot;sci_fi&quot;</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Highly-rated Drama recommendations:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">drama_recs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - </span><span class="si">{</span><span class="n">rec</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Great Sci-Fi recommendations:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">sci_fi_recs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - </span><span class="si">{</span><span class="n">rec</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>What's Next?</h2>
+<p>You now have a solid foundation in Python's basic data types and data structures! These are the building blocks you'll use in virtually every Python program you write. Whether you're building a web application, analyzing data, or creating the next great piece of software, these concepts will serve you well.</p>
+<p>In the next part of our Python Kickstart series, we'll explore control flow - including conditional statements and loops that will let your programs make decisions and repeat actions. We'll also dive deeper into functions, which will help you organize your code and avoid repetition.</p>
+<h2>Practice Improves Your Programming</h2>
+<p>Remember, the best way to master these concepts is through practice. Try creating your own examples using your favorite movies, TV shows, or books. Build a small program that organizes your media collection, or create a simple movie rating system. The more you experiment with these data types and structures, the more natural they'll become.</p>
+<p>Keep coding, keep learning, and remember: understanding these fundamentals will make you a much more effective programmer, whether you're working with an AI assistance or writing code from scratch. As we learned in part 1, vibe coding might be fun, but solid fundamental knowledge is what pays the bills!</p>
+<p>Thanks for following along with Python Kickstart part 2. In our next installment, we'll put these data structures to work with control flow and functions. Until then, happy coding!</p>
+    <hr>
+    <footer>
+      <p>Published: <time datetime="2025-07-09T09:58:00-07:00">
+        Wed 09 July 2025
+      </time></p>
+        <p>
+          Category: <a href="https://www.benjaminpatch.com/category/ai-in-practice/">AI in Practice</a>
+        </p>
+        <p>
+          Tags:
+            <a href="https://www.benjaminpatch.com/tag/python/">python</a>
+            <a href="https://www.benjaminpatch.com/tag/python-kickstart/">python kickstart</a>
+            <a href="https://www.benjaminpatch.com/tag/best-practices/">best practices</a>
+            <a href="https://www.benjaminpatch.com/tag/open-source/">open-source</a>
+        </p>
+    </footer>
+  </article>
+    </main>
+    <footer class="text-center p-3 m-1 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+      <p>
+        Powered by <a class="link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+          rel="noopener noreferrer" href="https://getpelican.com/">Pelican <i class="bi bi-box-arrow-up-right"></i></a>
+        and <a class="link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+          rel="noopener noreferrer" href="https://getbootstrap.com/">Bootstrap <i class="bi bi-box-arrow-up-right"></i></a>
+      </p>
+      </a>
+      <p>
+        Designed and Coded by Benjamin Patch
+      </p>
+      <p>
+        © 2025 Benjamin Patch
+      </p>
+    </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  </body>
+</html>

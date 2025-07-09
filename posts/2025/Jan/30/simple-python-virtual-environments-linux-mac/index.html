@@ -52,8 +52,8 @@
       <p>Published: <time datetime="2025-01-30T17:32:00-08:00">
         Thu 30 January 2025
       </time></p>
-        <p>Last updated: <time datetime="2025-03-03T16:58:00-08:00">
-          Mon 03 March 2025
+        <p>Last updated: <time datetime="2025-07-09T09:58:00-07:00">
+          Wed 09 July 2025
         </time></p>
     </header>
     <hr>
@@ -287,7 +287,7 @@ pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </spa
 <div class="highlight"><pre><span></span><code>deactivate
 </code></pre></div>
 
-<p>If needed, you can then switch to another virtual environment running a different version of Python and/or packages to see how these new environments affect your program. </p>
+<p>If needed, you can then switch to another virtual environment running a different version of Python and/or packages to see how these new environments affect your program.</p>
 <h2>Remove a Virtual Environment</h2>
 <p>Since we created the environment in a sub-directory of our project, simply delete the <code>.venv</code> directory to remove the virtual environment. For example:</p>
 <div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>/path/to/your/project/.venv-3.9.17
@@ -309,12 +309,17 @@ pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </spa
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </code></pre></div>
 
-<p>Unfortunately, <code>pip</code> does not record the version of Python running in this environment. I recommend adding this as a note on your project’s <code>README</code> or other documentation so you and others have a record of the exact environment variables of when the program was built and tested.</p>
+<h2>Set a Local Python Version</h2>
+<p>In most cases, it is also a good idea to require a specific version of Python to run your project. From your project's root directory, set this by running:</p>
+<div class="highlight"><pre><span></span><code>pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </span><span class="m">3</span>.13.2<span class="w"> </span><span class="c1"># replace with your desired Python version number</span>
+</code></pre></div>
+
+<p>This creates a <code>.python-version</code> file which tells your system which version of Python to use.</p>
 <hr>
 <h2>In Summary</h2>
 <p>For managing multiple Python versions on your system while creating isolated development environments, using <code>pyenv</code> along with <code>venv</code> is the recommended and most straightforward approach. Once the virtual environment is running, using <code>pip</code> to create and update the <code>requirements.txt</code> file is a simple way to ensure all dependencies can easily be reproduced.</p>
 <p>This guide has helped us create a simple, clean, and flexible virtual development environment.</p>
-<p>If you found this helpful and would like me to write guides for more advanced dependency management with tools like <a href="https://packaging.python.org/en/latest/tutorials/managing-dependencies/">Pipenv</a> or <a href="https://python-poetry.org/">Poetry</a>, please contact me on Bluesky <a href="https://bsky.app/profile/benjaminpatch.com">@benjaminpatch.com</a>.</p>
+<p>If you found this helpful and would like me to write guides for more advanced dependency management with tools like <a href="https://python-poetry.org/">Poetry</a> or <a href="https://docs.astral.sh/uv/">uv</a>, please contact me on Bluesky <a href="https://bsky.app/profile/benjaminpatch.com">@benjaminpatch.com</a>.</p>
 <p>Thanks for reading and I wish you the best in creating and managing all of your Python virtual environments!</p>
 <h2>Additional Information and Sources</h2>
 <ul>
@@ -329,8 +334,8 @@ pyenv<span class="w"> </span><span class="nb">local</span><span class="w"> </spa
       <p>Published: <time datetime="2025-01-30T17:32:00-08:00">
         Thu 30 January 2025
       </time></p>
-        <p>Last updated: <time datetime="2025-03-03T16:58:00-08:00">
-          Mon 03 March 2025
+        <p>Last updated: <time datetime="2025-07-09T09:58:00-07:00">
+          Wed 09 July 2025
         </time></p>
         <p>
           Category: <a href="https://www.benjaminpatch.com/category/ai-in-practice/">AI in Practice</a>

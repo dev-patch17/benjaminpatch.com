@@ -6,7 +6,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.benjaminpatch.com/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -20,28 +20,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.benjaminpatch.com/author/benjamin-patch/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/category/ai-ethos/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/category/ai-fundamentals/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/category/ai-in-practice/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -69,7 +69,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.benjaminpatch.com/posts/2025/Jan/30/simple-python-virtual-environments-linux-mac/</loc>
-<lastmod>2025-03-03T16:58:00-08:00</lastmod>
+<lastmod>2025-07-09T09:58:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>https://www.benjaminpatch.com/posts/2025/Jul/09/python-kickstart-p2-data-types-structures/</loc>
+<lastmod>2025-07-09T09:58:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>1.0</priority>
 </url>
@@ -83,105 +90,105 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/algorithmic-bias/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/best-practices/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/deep-learning/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/deepseek/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/generative-ai/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/machine-learning/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/model-distillation/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/neural-networks/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/open-source/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/python-kickstart/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/python/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/responsible-ai/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/symbolic-reasoning/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/vibe-coding/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.benjaminpatch.com/tag/virtual-environments/</loc>
-<lastmod>2025-05-21T12:35:58-00:00</lastmod>
+<lastmod>2025-07-09T10:57:43-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
