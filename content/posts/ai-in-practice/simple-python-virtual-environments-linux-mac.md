@@ -56,7 +56,7 @@ python3 --version # run Python commands on Linux and macOS
 py --version      # run the same Python command on Windows
 ```
 
-## Install pyenv
+## Install `pyenv`
 
 `pyenv` is the gold standard for managing multiple Python versions on your system. It allows you to easily install and switch between different Python interpreters globally or on a per-project level. It is simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well. Let's start by getting `pyenv` installed.
 
@@ -223,7 +223,7 @@ If your OS is not listed here, please see the [complete documentation of suggest
 
 ---
 
-## List and Install Python Versions with pyenv
+## List and Install Python Versions with `pyenv`
 
 With your shell configured and Python build dependencies installed, let’s now ask `pyenv` to list all Python versions it knows about. This is a long list, so you might want to use a regular expression to narrow it down.
 
@@ -297,7 +297,7 @@ pyenv uninstall 3.9.17 # to uninstall Python version 3.9.17
 ---
 
 <a id="use-venv-to-create-virtual-environments"></a>
-## Use venv to Create Virtual Environments
+## Use `venv` to Create Virtual Environments
 
 Advantages of `venv` over the older `virtualenv` option:
 
@@ -367,19 +367,19 @@ Since we created the environment in a sub-directory of our project, simply delet
 rm -rf /path/to/your/project/.venv-3.9.17
 ```
 
-## Go Further with venv
+## Go Further with `venv`
 
 For more information about using `venv`, I recommend starting with the official documentation:  [venv - Creation of Virtual Environments - docs.python.org](https://docs.python.org/3/library/venv.html)
 
 ---
 
-## Basic Dependency Declaration with pip
+## Basic Dependency Declaration with `pip`
 
 Most Python programs make use of external packages and modules. To ensure your program has the correct version of everything it needs to run properly, it’s a good idea to formally declare all dependencies in a way that can easily be updated and reproduced on another system or new virtual environment.
 
 Fortunately, Python’s standard package manager `pip` makes this easy.
 
-## Generate a requirements.txt File
+## Generate a `requirements.txt` File
 
 After our packages are installed, all we need to do is use `pip` to generate a `requirements.txt` file. This file lists all the installed packages and their versions. To do this, run:
 

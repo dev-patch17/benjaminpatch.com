@@ -78,7 +78,7 @@ In the example above, `greeting` is the variable, and it is set to the `string` 
 
 In Python, variables can be assigned to just about anything the language supports - as we will see moving forward.
 
-## Python's print() Function
+## Python's `print()` Function
 
 If we open the Python interpreter in our terminal (`python3` on Linux/Mac or `py` on Windows), and enter the following two lines of code:
 
