@@ -33,6 +33,25 @@ make publish
 Push the newly generated site to the `gh-pages` branch. GitHub Pages should
 automatically update the production site within a few minutes.
 
+## Updating Social Media Links
+
+Social media icons appear in the author byline on all article pages and index pages. To update the social media links:
+
+1. **Edit the SOCIAL configuration** in `pelicanconf.py`:
+   ```python
+   SOCIAL = (
+       ("LinkedIn", "https://www.linkedin.com/in/your-profile/"),
+       ("Bluesky", "https://bsky.app/profile/your-handle"),
+   )
+   ```
+
+2. **Update the About page** in `content/pages/about.md` to match your new links:
+   ```html
+   <a href="https://www.linkedin.com/in/your-profile/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+   ```
+
+The social media icons (LinkedIn and Bluesky SVGs) are automatically rendered in the templates. To add new social platforms, edit the conditional logic in `themes/bootstrap/templates/article.html` and `themes/bootstrap/templates/index.html`.
+
 ## GitHub Master to Main Update
 
 ```bash
@@ -43,6 +62,13 @@ git remote set-head origin -a
 ```
 
 ## Release Notes
+
+### 2025.07.31
+
+- Publish "Python Kickstart (part 3): Control Flow and Conditionals" article.
+- Update article headings to use code formatting for Python keywords.
+- Add social media links to author's byline.
+- Configure Claude Code.
 
 ### 2025.07.09
 
