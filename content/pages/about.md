@@ -8,4 +8,4 @@ Hi there, and thanks for visiting my artificial intelligence blog! My name is Be
 
 I currently live in Southern California with my beautiful wife and playful dog. When I’m not programming or blogging, I write feature-length screenplays.
 
-If you have any questions about my articles or would like to suggest future topics, please reach out to me on Bluesky [@benjaminpatch.com](https://bsky.app/profile/benjaminpatch.com).
+If you have any questions about my articles or would like to suggest future topics, please reach out to me on <a href="https://www.linkedin.com/in/benjaminpatch/" target="_blank" rel="noopener noreferrer">LinkedIn</a> or <a href="https://bsky.app/profile/benjaminpatch.com" target="_blank" rel="noopener noreferrer">Bluesky</a>.
