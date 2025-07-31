@@ -32,6 +32,7 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
+    ("LinkedIn", "https://www.linkedin.com/in/benjaminpatch/"),
     ("Bluesky", "https://bsky.app/profile/benjaminpatch.com"),
 )
 
