@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+       <title>Python Kickstart (part 3): Control Flow and Conditionals - Benjamin Patch</title>
+      <meta charset="utf-8" />
+      <meta name="generator" content="Pelican" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+        <link href="https://www.benjaminpatch.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Benjamin Patch Full Atom Feed" />
+        <link href="https://www.benjaminpatch.com/feeds/ai-in-practice.atom.xml" type="application/atom+xml" rel="alternate" title="Benjamin Patch Categories Atom Feed" />
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DHY8WE47S"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-0DHY8WE47S');
+        </script>
+   <meta name="description" content="Master Python's control flow and conditionals to create dynamic programs that make intelligent decisions and execute repetitive tasks efficiently." />
+ <meta name="tags" content="python" />
+<meta name="tags" content="python kickstart" />
+<meta name="tags" content="best practices" />
+<meta name="tags" content="open-source" />
+   </head>
+
+  <body class="container">
+    <header class="text-center p-3 m-1 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+      <hgroup><h1><a class="link-offset-2 link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+        href="https://www.benjaminpatch.com/"><i class="bi bi-house-door"></i> Benjamin Patch</a></h1><p>Guides for Building Ethical & Impactful AI Software</p></hgroup>
+      <nav><ul class="nav nav-underline nav-justified">
+            <li class="nav-item"><a href="https://www.benjaminpatch.com/about/"  class="nav-link" >About</a></li>
+            <li class="nav-item"><a href="https://www.benjaminpatch.com/category/ai-ethos/"  class="nav-link" >AI Ethos</a></li>
+            <li class="nav-item"><a href="https://www.benjaminpatch.com/category/ai-fundamentals/"  class="nav-link" >AI Fundamentals</a></li>
+            <li class="nav-item"><a href="https://www.benjaminpatch.com/category/ai-in-practice/"  class="nav-link active" aria-current="page" >AI in Practice</a></li>
+      </ul></nav>
+    </header>
+    <main class="col-md-8 offset-md-2 col-xl-6 offset-xl-3 p-1">
+<article>
+    <header>
+        <h1>Python Kickstart (part 3): Control Flow and Conditionals</h1>
+ 
+        <p>
+            Written by             <a href="https://www.benjaminpatch.com/author/benjamin-patch/">Benjamin Patch</a>
+               <a
+                href="https://www.linkedin.com/in/benjaminpatch/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="ms-2 text-decoration-none"
+                title="Connect with me on LinkedIn"
+            >
+                <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                </svg>
+            </a>
+              <a
+                href="https://bsky.app/profile/benjaminpatch.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="ms-2 text-decoration-none"
+                title="Connect with me on Bluesky"
+            >
+                <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 568 501"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M123.121 33.6637C188.241 82.5526 258.281 181.681 284 234.873C309.719 181.681 379.759 82.5526 444.879 33.6637C491.866 1.61183 568 -28.9064 568 57.9464C568 75.2916 558.055 203.659 552.222 224.501C531.947 296.954 458.067 315.434 392.347 304.249C507.222 323.8 536.444 388.56 473.333 453.32C353.473 576.312 301.061 422.461 284 384.039C266.939 422.461 214.527 576.312 94.6667 453.32C31.5556 388.56 60.7778 323.8 175.653 304.249C109.933 315.434 36.0535 296.954 15.7778 224.501C9.94525 203.659 0 75.2916 0 57.9464C0 -28.9064 76.1345 1.61183 123.121 33.6637Z"
+                    />
+                </svg>
+            </a>
+          </p>
+        <p>
+            Published:
+            <time datetime="2025-07-31T13:58:00-07:00">
+                Thu 31 July 2025
+            </time>
+        </p>
+    </header>
+    <hr />
+    <p>Welcome back to our Python Kickstart series! In <a href="https://www.benjaminpatch.com/posts/2025/May/13/when-vibe-coding-fails-python-kickstart-p1/">part 1</a>, we covered Python installation, variables, and basic concepts. In <a href="https://www.benjaminpatch.com/posts/2025/Jul/09/python-kickstart-p2-data-types-structures/">part 2</a>, we explored data types and data structures. Now we're ready to make our programs truly dynamic with control flow and conditionals.</p>
+<p>Control flow is what transforms static code into intelligent programs that can make decisions and repeat actions based on conditions. Think of it as the director's vision that determines how a film's story unfolds - sometimes linear, sometimes nonlinear with flashbacks and/or parallel narratives, but always purposeful. Just as a great director uses different techniques to guide the audience through a narrative, Python's control flow statements guide your program through different logical paths.</p>
+<h2>Understanding Program Flow</h2>
+<p>Before diving into specific statements, it's important to understand that Python programs execute line by line, from top to bottom. Control flow statements allow you to change this natural order by:</p>
+<ul>
+<li><strong>Making decisions</strong> with conditional statements (<code>if</code>, <code>elif</code>, <code>else</code>)</li>
+<li><strong>Repeating actions</strong> with loops (<code>for</code>, <code>while</code>)</li>
+<li><strong>Jumping out of or skipping parts</strong> of loops (<code>break</code>, <code>continue</code>)</li>
+</ul>
+<p>Let's explore each of these powerful tools.</p>
+<h2>Conditional Statements: Teaching Programs to Decide</h2>
+<p>Conditional statements are the foundation of program logic. They allow your code to examine conditions and execute different blocks of code based on whether those conditions are true or false.</p>
+<h3>The <code>if</code> Statement</h3>
+<p>The simplest conditional statement is <code>if</code>. It executes code only when a condition is true:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Movie recommendation system</span>
+<span class="n">imdb_rating</span> <span class="o">=</span> <span class="mf">9.2</span>
+<span class="n">movie_title</span> <span class="o">=</span> <span class="s2">&quot;The Godfather&quot;</span>
+
+<span class="k">if</span> <span class="n">imdb_rating</span> <span class="o">&gt;</span> <span class="mf">9.0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">movie_title</span><span class="si">}</span><span class="s2"> is a certified masterpiece!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This film belongs in every cinephile&#39;s collection.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Highly recommended for serious film study.&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Notice several important things about this code:</p>
+<ol>
+<li><strong>The colon (<code>:</code>)</strong> at the end of the <code>if</code> line - this is required syntax</li>
+<li><strong>Indentation</strong> - everything indented under the <code>if</code> statement only executes when the condition is true</li>
+<li><strong>The condition</strong> - <code>imdb_rating &gt; 9.0</code> evaluates to either <code>True</code> or <code>False</code></li>
+</ol>
+<p>Python uses indentation (typically 4 spaces) to group code blocks together. This is different from many other programming languages that use curly braces <code>{}</code>. The indented code forms a "block" that executes as a unit.</p>
+<h3>The <code>if</code>-<code>else</code> Statement</h3>
+<p>Often you want to execute one piece of code when a condition is true, and different code when it's false. This is where <code>else</code> comes in:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Film festival submission guidelines</span>
+<span class="n">runtime_minutes</span> <span class="o">=</span> <span class="mi">195</span>
+<span class="n">festival_max_runtime</span> <span class="o">=</span> <span class="mi">180</span>
+
+<span class="k">if</span> <span class="n">runtime_minutes</span> <span class="o">&lt;=</span> <span class="n">festival_max_runtime</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ This film meets the festival&#39;s runtime requirements.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Status: Approved for submission.&quot;</span><span class="p">)</span>
+    <span class="n">submission_fee</span> <span class="o">=</span> <span class="mi">75</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✗ This film exceeds the festival&#39;s maximum runtime.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Status: Requires editing or alternate festival selection.&quot;</span><span class="p">)</span>
+    <span class="n">submission_fee</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Submission fee: $</span><span class="si">{</span><span class="n">submission_fee</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>The <code>else</code> clause provides an alternative path when the <code>if</code> condition is false. Exactly one of the two code blocks will execute - never both, never neither.</p>
+<h3>The <code>if</code>-<code>elif</code>-<code>else</code> Chain</h3>
+<p>For multiple conditions, use <code>elif</code> (short for "else if"). This allows you to test several conditions in sequence:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Movie era classification system</span>
+<span class="n">release_year</span> <span class="o">=</span> <span class="mi">1962</span>
+<span class="n">director</span> <span class="o">=</span> <span class="s2">&quot;David Lean&quot;</span>
+
+<span class="k">if</span> <span class="n">release_year</span> <span class="o">&lt;</span> <span class="mi">1930</span><span class="p">:</span>
+    <span class="n">era</span> <span class="o">=</span> <span class="s2">&quot;Silent Era&quot;</span>
+    <span class="n">characteristics</span> <span class="o">=</span> <span class="s2">&quot;Visual storytelling, title cards, live musical accompaniment&quot;</span>
+<span class="k">elif</span> <span class="n">release_year</span> <span class="o">&lt;</span> <span class="mi">1960</span><span class="p">:</span>
+    <span class="n">era</span> <span class="o">=</span> <span class="s2">&quot;Golden Age of Hollywood&quot;</span>
+    <span class="n">characteristics</span> <span class="o">=</span> <span class="s2">&quot;Studio system, star power, Technicolor innovation&quot;</span>
+<span class="k">elif</span> <span class="n">release_year</span> <span class="o">&lt;</span> <span class="mi">1980</span><span class="p">:</span>
+    <span class="n">era</span> <span class="o">=</span> <span class="s2">&quot;New Hollywood&quot;</span>
+    <span class="n">characteristics</span> <span class="o">=</span> <span class="s2">&quot;Auteur theory, social commentary, experimental techniques&quot;</span>
+<span class="k">elif</span> <span class="n">release_year</span> <span class="o">&lt;</span> <span class="mi">2000</span><span class="p">:</span>
+    <span class="n">era</span> <span class="o">=</span> <span class="s2">&quot;Modern Era&quot;</span>
+    <span class="n">characteristics</span> <span class="o">=</span> <span class="s2">&quot;Digital effects, blockbuster mentality, franchise development&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">era</span> <span class="o">=</span> <span class="s2">&quot;Contemporary Cinema&quot;</span>
+    <span class="n">characteristics</span> <span class="o">=</span> <span class="s2">&quot;Streaming platforms, international perspectives, diverse voices&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">director</span><span class="si">}</span><span class="s2">&#39; directed films during the </span><span class="si">{</span><span class="n">era</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key characteristics: </span><span class="si">{</span><span class="n">characteristics</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Additional context based on specific era</span>
+<span class="k">if</span> <span class="n">era</span> <span class="o">==</span> <span class="s2">&quot;New Hollywood&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This was a revolutionary period that challenged traditional filmmaking.&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Python evaluates <code>elif</code> conditions in order and executes the first block where the condition is true. Once a condition matches, the remaining <code>elif</code> and <code>else</code> blocks are skipped.</p>
+<h3>Comparison Operators: The Building Blocks of Conditions</h3>
+<p>Python provides several operators for making comparisons. Understanding these is crucial for writing effective conditional statements:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Comprehensive movie analysis using comparison operators</span>
+<span class="n">citizen_kane_year</span> <span class="o">=</span> <span class="mi">1941</span>
+<span class="n">vertigo_year</span> <span class="o">=</span> <span class="mi">1958</span>
+<span class="n">lawrence_rating</span> <span class="o">=</span> <span class="mf">8.3</span>
+<span class="n">kane_rating</span> <span class="o">=</span> <span class="mf">8.3</span>
+<span class="n">casablanca_votes</span> <span class="o">=</span> <span class="mi">558_278</span>
+<span class="n">kane_votes</span> <span class="o">=</span> <span class="mi">442_988</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== MOVIE COMPARISON ANALYSIS ===&quot;</span><span class="p">)</span>
+
+<span class="c1"># Equality and inequality</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Same IMDB rating? </span><span class="si">{</span><span class="n">lawrence_rating</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">kane_rating</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Different release years? </span><span class="si">{</span><span class="n">citizen_kane_year</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">vertigo_year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Numerical comparisons</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vertigo released after Citizen Kane? </span><span class="si">{</span><span class="n">vertigo_year</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">citizen_kane_year</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kane released before 1950? </span><span class="si">{</span><span class="n">citizen_kane_year</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1950</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Lawrence rating at least 8.0? </span><span class="si">{</span><span class="n">lawrence_rating</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">8.0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kane rating 8.3 or lower? </span><span class="si">{</span><span class="n">kane_rating</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">8.3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Practical application</span>
+<span class="n">age_difference</span> <span class="o">=</span> <span class="n">vertigo_year</span> <span class="o">-</span> <span class="n">citizen_kane_year</span>
+<span class="k">if</span> <span class="n">age_difference</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;These films span different cinematic generations (</span><span class="si">{</span><span class="n">age_difference</span><span class="si">}</span><span class="s2"> years apart)&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>Logical Operators: Combining Conditions</h3>
+<p>Real-world decisions often depend on multiple factors. Python's logical operators <code>and</code>, <code>or</code>, and <code>not</code> let you combine conditions:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Advanced movie filtering for awards consideration</span>
+<span class="n">movie_title</span> <span class="o">=</span> <span class="s2">&quot;Lawrence of Arabia&quot;</span>
+<span class="n">runtime</span> <span class="o">=</span> <span class="mi">228</span>
+<span class="n">imdb_rating</span> <span class="o">=</span> <span class="mf">8.3</span>
+<span class="n">won_best_picture</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">director</span> <span class="o">=</span> <span class="s2">&quot;David Lean&quot;</span>
+<span class="n">box_office_millions</span> <span class="o">=</span> <span class="mf">70.0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Analyzing: </span><span class="si">{</span><span class="n">movie_title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Using &#39;and&#39; - ALL conditions must be true</span>
+<span class="k">if</span> <span class="n">runtime</span> <span class="o">&gt;</span> <span class="mi">180</span> <span class="ow">and</span> <span class="n">imdb_rating</span> <span class="o">&gt;</span> <span class="mf">8.0</span> <span class="ow">and</span> <span class="n">won_best_picture</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Qualifies as an Epic Masterpiece&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - Extended runtime showcases ambitious scope&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - High critical acclaim confirms artistic merit&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  - Academy recognition validates cultural impact&quot;</span><span class="p">)</span>
+
+<span class="c1"># Using &#39;or&#39; - AT LEAST ONE condition must be true</span>
+<span class="k">if</span> <span class="n">director</span> <span class="o">==</span> <span class="s2">&quot;David Lean&quot;</span> <span class="ow">or</span> <span class="n">director</span> <span class="o">==</span> <span class="s2">&quot;Akira Kurosawa&quot;</span> <span class="ow">or</span> <span class="n">director</span> <span class="o">==</span> <span class="s2">&quot;John Ford&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Directed by a Master of Epic Cinema&quot;</span><span class="p">)</span>
+
+<span class="c1"># Using &#39;not&#39; - condition must be FALSE</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">box_office_millions</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✗ Not a major commercial success&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Note: Artistic merit often differs from box office performance&quot;</span><span class="p">)</span>
+
+<span class="c1"># Complex logical combinations</span>
+<span class="n">is_prestigious</span> <span class="o">=</span> <span class="p">(</span><span class="n">won_best_picture</span> <span class="ow">and</span> <span class="n">imdb_rating</span> <span class="o">&gt;</span> <span class="mf">8.0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">director</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Kubrick&quot;</span><span class="p">,</span> <span class="s2">&quot;Hitchcock&quot;</span><span class="p">,</span> <span class="s2">&quot;Welles&quot;</span><span class="p">])</span>
+<span class="k">if</span> <span class="n">is_prestigious</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✓ Considered a prestigious film by multiple criteria&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>String Comparisons and the <code>in</code> Operator</h3>
+<p>Python can compare strings and check for membership using the <code>in</code> operator:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Genre analysis and director style identification</span>
+<span class="n">movie_title</span> <span class="o">=</span> <span class="s2">&quot;North by Northwest&quot;</span>
+<span class="n">genre_tags</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;thriller&quot;</span><span class="p">,</span> <span class="s2">&quot;suspense&quot;</span><span class="p">,</span> <span class="s2">&quot;espionage&quot;</span><span class="p">,</span> <span class="s2">&quot;romance&quot;</span><span class="p">]</span>
+<span class="n">director_style</span> <span class="o">=</span> <span class="s2">&quot;Alfred Hitchcock&quot;</span>
+
+<span class="c1"># String comparison (case-sensitive)</span>
+<span class="k">if</span> <span class="n">director_style</span> <span class="o">==</span> <span class="s2">&quot;Alfred Hitchcock&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Master of Suspense film detected!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Membership testing with &#39;in&#39;</span>
+<span class="k">if</span> <span class="s2">&quot;thriller&quot;</span> <span class="ow">in</span> <span class="n">genre_tags</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This film will keep you on the edge of your seat&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="s2">&quot;romance&quot;</span> <span class="ow">in</span> <span class="n">genre_tags</span> <span class="ow">and</span> <span class="s2">&quot;suspense&quot;</span> <span class="ow">in</span> <span class="n">genre_tags</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Perfect blend of heart and tension&quot;</span><span class="p">)</span>
+
+<span class="c1"># Substring checking in strings</span>
+<span class="n">film_title_lower</span> <span class="o">=</span> <span class="n">movie_title</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="k">if</span> <span class="s2">&quot;north&quot;</span> <span class="ow">in</span> <span class="n">film_title_lower</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Geographic reference in title suggests a journey narrative&quot;</span><span class="p">)</span>
+
+<span class="c1"># Checking multiple possibilities</span>
+<span class="n">hitchcock_classics</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Psycho&quot;</span><span class="p">,</span> <span class="s2">&quot;Vertigo&quot;</span><span class="p">,</span> <span class="s2">&quot;North by Northwest&quot;</span><span class="p">,</span> <span class="s2">&quot;Rear Window&quot;</span><span class="p">,</span> <span class="s2">&quot;The Birds&quot;</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">movie_title</span> <span class="ow">in</span> <span class="n">hitchcock_classics</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">movie_title</span><span class="si">}</span><span class="s2">&#39; is among Hitchcock&#39;s most celebrated works&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Loops: Repeating Actions Efficiently</h2>
+<p>Loops allow you to execute code multiple times without writing repetitive statements. They're essential for processing collections of data and performing repetitive tasks.</p>
+<h3>The <code>for</code> Loop: Iterating Over Collections</h3>
+<p>Use <code>for</code> loops when you want to process each item in a collection:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Displaying a curated film festival lineup</span>
+<span class="n">festival_films</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;8½&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Persona&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;The Rules of the Game&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Tokyo Story&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;The 400 Blows&quot;</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CANNES RETROSPECTIVE: International Cinema Masterpieces&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">55</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">film</span> <span class="ow">in</span> <span class="n">festival_films</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🎬 </span><span class="si">{</span><span class="n">film</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Add specific context for certain films</span>
+    <span class="k">if</span> <span class="n">film</span> <span class="o">==</span> <span class="s2">&quot;8½&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Federico Fellini&#39;s surreal meditation on creativity&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">film</span> <span class="o">==</span> <span class="s2">&quot;Tokyo Story&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Yasujirō Ozu&#39;s profound family drama&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total films in retrospective: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">festival_films</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>You can iterate over strings character by character:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Analyzing film title composition</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;CASABLANCA&quot;</span>
+<span class="n">vowel_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">consonant_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Analyzing the title: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character breakdown:&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="n">title</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">character</span> <span class="ow">in</span> <span class="s2">&quot;AEIOU&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  &#39;</span><span class="si">{</span><span class="n">character</span><span class="si">}</span><span class="s2">&#39; - vowel&quot;</span><span class="p">)</span>
+        <span class="n">vowel_count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">character</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  &#39;</span><span class="si">{</span><span class="n">character</span><span class="si">}</span><span class="s2">&#39; - consonant&quot;</span><span class="p">)</span>
+        <span class="n">consonant_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Summary: </span><span class="si">{</span><span class="n">vowel_count</span><span class="si">}</span><span class="s2"> vowels, </span><span class="si">{</span><span class="n">consonant_count</span><span class="si">}</span><span class="s2"> consonants&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The title has a </span><span class="si">{</span><span class="n">vowel_count</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="p">)</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2"> vowel ratio&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>Using <code>range()</code> for Controlled Iteration</h3>
+<p>The <code>range()</code> function generates sequences of numbers, perfect for controlled loops:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Film festival countdown and ranking system</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎭 VENICE FILM FESTIVAL COUNTDOWN&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Premiere begins in...&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">seconds</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>  <span class="c1"># Start at 5, stop before 0, step by -1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   </span><span class="si">{</span><span class="n">seconds</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎬 Action! Festival begins!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Ranking films with position numbers</span>
+<span class="n">critically_acclaimed</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Citizen Kane&quot;</span><span class="p">,</span> <span class="mf">8.3</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;The Godfather&quot;</span><span class="p">,</span> <span class="mf">9.2</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;8½&quot;</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Vertigo&quot;</span><span class="p">,</span> <span class="mf">8.3</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🏆 CRITICS&#39; CHOICE RANKINGS:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">critically_acclaimed</span><span class="p">)):</span>
+    <span class="n">title</span><span class="p">,</span> <span class="n">rating</span> <span class="o">=</span> <span class="n">critically_acclaimed</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">rank</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c1"># Add special notation for top positions</span>
+    <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">medal</span> <span class="o">=</span> <span class="s2">&quot;🥇&quot;</span>
+    <span class="k">elif</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">medal</span> <span class="o">=</span> <span class="s2">&quot;🥈&quot;</span>
+    <span class="k">elif</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">medal</span> <span class="o">=</span> <span class="s2">&quot;🥉&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">medal</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">rank</span><span class="si">}</span><span class="s2">.&quot;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">medal</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> (IMDB: </span><span class="si">{</span><span class="n">rating</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>The <code>while</code> Loop: Conditional Repetition</h3>
+<p>Use <code>while</code> loops when you want to repeat code as long as a condition remains true:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Box office tracking simulation</span>
+<span class="n">film_title</span> <span class="o">=</span> <span class="s2">&quot;Lawrence of Arabia&quot;</span>
+<span class="n">opening_weekend</span> <span class="o">=</span> <span class="mf">4.2</span>  <span class="c1"># millions (1962 dollars)</span>
+<span class="n">total_gross</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">week</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">target_gross</span> <span class="o">=</span> <span class="mf">15.0</span>  <span class="c1"># Break-even point</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📊 BOX OFFICE TRACKING: </span><span class="si">{</span><span class="n">film_title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">45</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="n">total_gross</span> <span class="o">&lt;</span> <span class="n">target_gross</span><span class="p">:</span>
+    <span class="c1"># Simulate weekly box office decline</span>
+    <span class="n">weekly_earnings</span> <span class="o">=</span> <span class="n">opening_weekend</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.85</span> <span class="o">**</span> <span class="p">(</span><span class="n">week</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">total_gross</span> <span class="o">+=</span> <span class="n">weekly_earnings</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Week </span><span class="si">{</span><span class="n">week</span><span class="si">:</span><span class="s2">2</span><span class="si">}</span><span class="s2">: $</span><span class="si">{</span><span class="n">weekly_earnings</span><span class="si">:</span><span class="s2">4.1f</span><span class="si">}</span><span class="s2">M (Total: $</span><span class="si">{</span><span class="n">total_gross</span><span class="si">:</span><span class="s2">5.1f</span><span class="si">}</span><span class="s2">M)&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Weekly performance analysis</span>
+    <span class="k">if</span> <span class="n">week</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;         Strong opening weekend performance&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">weekly_earnings</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;         Box office momentum slowing&quot;</span><span class="p">)</span>
+
+    <span class="n">week</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Safety break to prevent infinite loops</span>
+    <span class="k">if</span> <span class="n">week</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;         Extended theatrical run completed&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🎯 Final gross: $</span><span class="si">{</span><span class="n">total_gross</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">M after </span><span class="si">{</span><span class="n">week</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s2"> weeks&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">total_gross</span> <span class="o">&gt;=</span> <span class="n">target_gross</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Film achieved commercial success!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;📈 Film built audience through word-of-mouth&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>Loop Control: <code>break</code> and <code>continue</code></h3>
+<p>Fine-tune loop execution with <code>break</code> and <code>continue</code> statements:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Film database search with early termination</span>
+<span class="n">directors_and_films</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Christopher Nolan&quot;</span><span class="p">,</span> <span class="s2">&quot;Dunkirk&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Martin Scorsese&quot;</span><span class="p">,</span> <span class="s2">&quot;Goodfellas&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Stanley Kubrick&quot;</span><span class="p">,</span> <span class="s2">&quot;2001: A Space Odyssey&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Akira Kurosawa&quot;</span><span class="p">,</span> <span class="s2">&quot;Seven Samurai&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Christopher Nolan&quot;</span><span class="p">,</span> <span class="s2">&quot;Inception&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Wong Kar-wai&quot;</span><span class="p">,</span> <span class="s2">&quot;In the Mood for Love&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">target_director</span> <span class="o">=</span> <span class="s2">&quot;Stanley Kubrick&quot;</span>
+<span class="n">search_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🔍 Searching for films by </span><span class="si">{</span><span class="n">target_director</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">director</span><span class="p">,</span> <span class="n">film</span> <span class="ow">in</span> <span class="n">directors_and_films</span><span class="p">:</span>
+    <span class="n">search_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Skip films by other directors</span>
+    <span class="k">if</span> <span class="n">director</span> <span class="o">!=</span> <span class="n">target_director</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Skipping: </span><span class="si">{</span><span class="n">film</span><span class="si">}</span><span class="s2"> by </span><span class="si">{</span><span class="n">director</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+
+    <span class="c1"># Found a match!</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Found: &#39;</span><span class="si">{</span><span class="n">film</span><span class="si">}</span><span class="s2">&#39; by </span><span class="si">{</span><span class="n">director</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Search completed after checking </span><span class="si">{</span><span class="n">search_count</span><span class="si">}</span><span class="s2"> entries&quot;</span><span class="p">)</span>
+    <span class="k">break</span>  <span class="c1"># Exit loop after finding first match</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># This &#39;else&#39; clause runs only if the loop completes without &#39;break&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ No films by </span><span class="si">{</span><span class="n">target_director</span><span class="si">}</span><span class="s2"> found in database&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🏁 Search operation finished&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Nested Control Structures</h2>
+<p>You can combine conditional statements and loops to create sophisticated program logic:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Film festival programming system</span>
+<span class="n">festival_submissions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Amour&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;Austria&quot;</span><span class="p">,</span> <span class="s2">&quot;runtime&quot;</span><span class="p">:</span> <span class="mi">127</span><span class="p">,</span> <span class="s2">&quot;genre&quot;</span><span class="p">:</span> <span class="s2">&quot;Drama&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Holy Motors&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;runtime&quot;</span><span class="p">:</span> <span class="mi">115</span><span class="p">,</span> <span class="s2">&quot;genre&quot;</span><span class="p">:</span> <span class="s2">&quot;Fantasy&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;The Master&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="s2">&quot;runtime&quot;</span><span class="p">:</span> <span class="mi">137</span><span class="p">,</span> <span class="s2">&quot;genre&quot;</span><span class="p">:</span> <span class="s2">&quot;Drama&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Beyond the Hills&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;Romania&quot;</span><span class="p">,</span> <span class="s2">&quot;runtime&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span> <span class="s2">&quot;genre&quot;</span><span class="p">:</span> <span class="s2">&quot;Drama&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎪 FESTIVAL PROGRAMMING COMMITTEE REVIEW&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="n">accepted_films</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">rejected_films</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">submission</span> <span class="ow">in</span> <span class="n">festival_submissions</span><span class="p">:</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">submission</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+    <span class="n">runtime</span> <span class="o">=</span> <span class="n">submission</span><span class="p">[</span><span class="s2">&quot;runtime&quot;</span><span class="p">]</span>
+    <span class="n">genre</span> <span class="o">=</span> <span class="n">submission</span><span class="p">[</span><span class="s2">&quot;genre&quot;</span><span class="p">]</span>
+    <span class="n">country</span> <span class="o">=</span> <span class="n">submission</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📽️  Reviewing: </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Multiple criteria evaluation</span>
+    <span class="k">if</span> <span class="n">runtime</span> <span class="o">&gt;</span> <span class="mi">180</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ❌ Rejected: Exceeds maximum runtime&quot;</span><span class="p">)</span>
+        <span class="n">rejected_films</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="k">continue</span>
+
+    <span class="k">if</span> <span class="n">genre</span> <span class="o">==</span> <span class="s2">&quot;Drama&quot;</span> <span class="ow">and</span> <span class="n">runtime</span> <span class="o">&gt;</span> <span class="mi">120</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ⚠️  Long drama - requires special consideration&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">country</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;France&quot;</span><span class="p">,</span> <span class="s2">&quot;Italy&quot;</span><span class="p">,</span> <span class="s2">&quot;Germany&quot;</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✅ Accepted: European arthouse cinema&quot;</span><span class="p">)</span>
+            <span class="n">accepted_films</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   📋 Under review: Non-European long drama&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">runtime</span> <span class="o">&lt;=</span> <span class="mi">120</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   ✅ Accepted: Appropriate runtime&quot;</span><span class="p">)</span>
+        <span class="n">accepted_films</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   📋 Under review: Standard evaluation needed&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📊 PROGRAMMING RESULTS:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Accepted: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">accepted_films</span><span class="p">)</span><span class="si">}</span><span class="s2"> films&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   Rejected: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">rejected_films</span><span class="p">)</span><span class="si">}</span><span class="s2"> films&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">accepted_films</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   🎬 Accepted films:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">film</span> <span class="ow">in</span> <span class="n">accepted_films</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;      • </span><span class="si">{</span><span class="n">film</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Common Mistakes and How to Avoid Them</h2>
+<p>Understanding common pitfalls will help you write more reliable code:</p>
+<h3>Indentation Errors</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># ❌ Incorrect - will cause IndentationError</span>
+<span class="n">rating</span> <span class="o">=</span> <span class="mf">8.5</span>
+<span class="k">if</span> <span class="n">rating</span> <span class="o">&gt;</span> <span class="mf">8.0</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Excellent film!&quot;</span><span class="p">)</span>  <span class="c1"># Not indented!</span>
+
+<span class="c1"># ✅ Correct indentation</span>
+<span class="k">if</span> <span class="n">rating</span> <span class="o">&gt;</span> <span class="mf">8.0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Excellent film!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Highly recommended!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>Assignment vs. Comparison</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># ❌ Common mistake - using assignment (=) instead of comparison (==)</span>
+<span class="n">director</span> <span class="o">=</span> <span class="s2">&quot;Kubrick&quot;</span>
+<span class="k">if</span> <span class="n">director</span> <span class="o">=</span> <span class="s2">&quot;Kubrick&quot;</span><span class="p">:</span>  <span class="c1"># SyntaxError!</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Master filmmaker&quot;</span><span class="p">)</span>
+
+<span class="c1"># ✅ Correct comparison</span>
+<span class="k">if</span> <span class="n">director</span> <span class="o">==</span> <span class="s2">&quot;Kubrick&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Master filmmaker&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>Infinite Loops</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># ❌ Dangerous - infinite loop</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Week </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># Forgot to increment counter!</span>
+
+<span class="c1"># ✅ Safe loop with proper increment</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Week </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Essential!</span>
+</code></pre></div>
+
+<h2>What's Next?</h2>
+<p>You now have the tools to create programs that make intelligent decisions and efficiently process data through repetition. Control flow and conditionals are fundamental to virtually every meaningful program you'll write.</p>
+<p>In our next installment, <strong>Python Kickstart Part 4: Functions</strong>, we'll explore how to organize your code into reusable blocks, making your programs more modular, maintainable, and powerful. Functions will allow you to avoid repetition and create more sophisticated applications by breaking complex problems into manageable pieces.</p>
+<h2>Practice Suggestions</h2>
+<p>Before moving on, try building these projects to reinforce your understanding:</p>
+<ul>
+<li><strong>Movie Recommendation Engine</strong>: Create a program that suggests films based on user preferences for genre, decade, and rating thresholds</li>
+<li><strong>Film Festival Scheduler</strong>: Build a system that organizes screenings based on runtime, venue capacity, and genre diversity</li>
+<li><strong>Box Office Tracker</strong>: Simulate and analyze the financial performance of films over multiple weeks</li>
+</ul>
+<p>Remember, the key to mastering these concepts is hands-on practice. Start with simple examples and gradually build more complex logic. Each conditional statement and loop you write strengthens your programming intuition.</p>
+<p>The more comfortable you become with control flow, the more naturally you'll think in terms of program logic - and the better equipped you'll be to understand, debug, and improve any Python code you encounter.</p>
+<p>Happy coding, and I'll see you in Part 4!</p>
+    <hr />
+    <footer>
+        <p>
+            Published:
+            <time datetime="2025-07-31T13:58:00-07:00">
+                Thu 31 July 2025
+            </time>
+        </p>
+         <p>
+            Category:
+            <a href="https://www.benjaminpatch.com/category/ai-in-practice/"
+                >AI in Practice</a
+            >
+        </p>
+         <p>
+            Tags:             <a href="https://www.benjaminpatch.com/tag/python/">python</a>
+            <a href="https://www.benjaminpatch.com/tag/python-kickstart/">python kickstart</a>
+            <a href="https://www.benjaminpatch.com/tag/best-practices/">best practices</a>
+            <a href="https://www.benjaminpatch.com/tag/open-source/">open-source</a>
+        </p>
+    </footer>
+</article>
+    </main>
+    <footer class="text-center p-3 m-1 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+      <p>
+        Powered by <a class="link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+          target="_blank" rel="noopener noreferrer" href="https://getpelican.com/">Pelican <i class="bi bi-box-arrow-up-right"></i></a>
+        and <a class="link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover"
+          target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/">Bootstrap <i class="bi bi-box-arrow-up-right"></i></a>
+      </p>
+      </a>
+      <p>
+        Designed and Coded by Benjamin Patch
+      </p>
+      <p>
+        © 2025 Benjamin Patch
+      </p>
+    </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script>
+  </body>
+</html>
