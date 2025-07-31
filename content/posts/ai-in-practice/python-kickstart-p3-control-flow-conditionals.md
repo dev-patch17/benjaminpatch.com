@@ -24,7 +24,7 @@ Let's explore each of these powerful tools.
 
 Conditional statements are the foundation of program logic. They allow your code to examine conditions and execute different blocks of code based on whether those conditions are true or false.
 
-### The if Statement
+### The `if` Statement
 
 The simplest conditional statement is `if`. It executes code only when a condition is true:
 
@@ -47,7 +47,7 @@ Notice several important things about this code:
 
 Python uses indentation (typically 4 spaces) to group code blocks together. This is different from many other programming languages that use curly braces `{}`. The indented code forms a "block" that executes as a unit.
 
-### The if-else Statement
+### The `if`-`else` Statement
 
 Often you want to execute one piece of code when a condition is true, and different code when it's false. This is where `else` comes in:
 
@@ -70,7 +70,7 @@ print(f"Submission fee: ${submission_fee}")
 
 The `else` clause provides an alternative path when the `if` condition is false. Exactly one of the two code blocks will execute - never both, never neither.
 
-### The if-elif-else Chain
+### The `if`-`elif`-`else` Chain
 
 For multiple conditions, use `elif` (short for "else if"). This allows you to test several conditions in sequence:
 
@@ -209,7 +209,7 @@ if movie_title in hitchcock_classics:
 
 Loops allow you to execute code multiple times without writing repetitive statements. They're essential for processing collections of data and performing repetitive tasks.
 
-### The for Loop: Iterating Over Collections
+### The `for` Loop: Iterating Over Collections
 
 Use `for` loops when you want to process each item in a collection:
 
@@ -261,7 +261,7 @@ print(f"\nSummary: {vowel_count} vowels, {consonant_count} consonants")
 print(f"The title has a {vowel_count/len(title):.1%} vowel ratio")
 ```
 
-### Using range() for Controlled Iteration
+### Using `range()` for Controlled Iteration
 
 The `range()` function generates sequences of numbers, perfect for controlled loops:
 
@@ -301,7 +301,7 @@ for i in range(len(critically_acclaimed)):
     print(f"{medal} {title} (IMDB: {rating})")
 ```
 
-### The while Loop: Conditional Repetition
+### The `while` Loop: Conditional Repetition
 
 Use `while` loops when you want to repeat code as long as a condition remains true:
 
@@ -344,7 +344,7 @@ else:
     print("📈 Film built audience through word-of-mouth")
 ```
 
-### Loop Control: break and continue
+### Loop Control: `break` and `continue`
 
 Fine-tune loop execution with `break` and `continue` statements:
 
