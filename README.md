@@ -27,7 +27,7 @@ uv run invoke livereload
 
 ```bash
 rm -rf output/*
-make publish
+uv run make publish
 ```
 
 Push the newly generated site to the `gh-pages` branch. GitHub Pages should
