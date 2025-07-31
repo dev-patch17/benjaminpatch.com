@@ -36,8 +36,8 @@ You can also create multi-line strings using triple quotes:
 ```python
 movie_review = """
 The Godfather is a masterpiece of American cinema.
-Francis Ford Coppola's direction combined with 
-Marlon Brando's iconic performance creates 
+Francis Ford Coppola's direction combined with
+Marlon Brando's iconic performance creates
 an unforgettable experience.
 """
 
@@ -270,7 +270,7 @@ movie_database = {
         "nationality": "American"
     },
     "welles": {
-        "name": "Orson Welles", 
+        "name": "Orson Welles",
         "notable_films": ["Citizen Kane", "The Third Man", "Touch of Evil"],
         "birth_year": 1915,
         "nationality": "American"
@@ -352,12 +352,12 @@ movie_collection = {
 def recommend_movies(genre, min_rating=8.0):
     if genre not in movie_collection:
         return f"Sorry, no {genre} movies in our collection."
-    
+
     recommendations = []
     for movie in movie_collection[genre]:
         if movie["rating"] >= min_rating:
             recommendations.append(f"{movie['title']} ({movie['year']}) - {movie['rating']}")
-    
+
     return recommendations
 
 # Get recommendations
@@ -377,12 +377,12 @@ for rec in sci_fi_recs:
 
 You now have a solid foundation in Python's basic data types and data structures! These are the building blocks you'll use in virtually every Python program you write. Whether you're building a web application, analyzing data, or creating the next great piece of software, these concepts will serve you well.
 
-In the next part of our Python Kickstart series, we'll explore control flow - including conditional statements and loops that will let your programs make decisions and repeat actions. We'll also dive deeper into functions, which will help you organize your code and avoid repetition.
+In the next part of our Python Kickstart series, we'll [explore Python's control flow and conditionals](https://www.benjaminpatch.com/posts/2025/Jul/31/python-kickstart-p3-control-flow-conditionals/) to create dynamic programs that make intelligent decisions and execute repetitive tasks efficiently.
 
 ## Practice Improves Your Programming
 
 Remember, the best way to master these concepts is through practice. Try creating your own examples using your favorite movies, TV shows, or books. Build a small program that organizes your media collection, or create a simple movie rating system. The more you experiment with these data types and structures, the more natural they'll become.
 
-Keep coding, keep learning, and remember: understanding these fundamentals will make you a much more effective programmer, whether you're working with an AI assistance or writing code from scratch. As we learned in part 1, vibe coding might be fun, but solid fundamental knowledge is what pays the bills!
+Keep coding, keep learning, and remember: understanding these fundamentals will make you a much more effective programmer, whether you're working with an AI assistant or writing code from scratch. As we learned in part 1, vibe coding might be fun, but solid fundamental knowledge is what pays the bills!
 
-Thanks for following along with Python Kickstart part 2. In our next installment, we'll put these data structures to work with control flow and functions. Until then, happy coding!
+Thanks for following along with Python Kickstart part 2. Until then next time, happy coding!
