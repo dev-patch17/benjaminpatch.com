@@ -3,8 +3,8 @@ Date: 2025-07-31 12:35
 Category: AI in Practice
 Tags: python, python kickstart, best practices, open-source
 Slug: python-kickstart-p3-control-flow-conditionals
-Description: REPLACE: Learn how and when to use Python's fundamental building blocks: data types and data structures, which are crucial for writing effective Python programs.
-Summary: REPLACE: Let's dive deeper into Python's fundamental building blocks: data types and data structures. Understanding these concepts is crucial for writing effective Python programs. Think of data types as the different kinds of information your program can work with, while data structures are the containers that organize and store that information. Let's get started!
+Description: Master Python's control flow and conditionals to create dynamic programs that make intelligent decisions and execute repetitive tasks efficiently.
+Summary: Transform static code into intelligent programs with Python's control flow statements. Learn if/elif/else conditionals, for and while loops, and how to combine them for complex logic. Complete with practical examples using movie data and film analysis scenarios to reinforce key programming concepts.
 
 Welcome back to our Python Kickstart series! In [part 1](https://www.benjaminpatch.com/posts/2025/May/13/when-vibe-coding-fails-python-kickstart-p1/), we covered Python installation, variables, and basic concepts. In [part 2](https://www.benjaminpatch.com/posts/2025/Jul/09/python-kickstart-p2-data-types-structures/), we explored data types and data structures. Now we're ready to make our programs truly dynamic with control flow and conditionals.
 
