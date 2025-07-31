@@ -31,6 +31,15 @@
         Written by {% for author in article.authors %}
         <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
         {% endfor %}
+        {% if SOCIAL %}
+          {% for name, link in SOCIAL %}
+            {% if name == "Bluesky" %}
+              <a href="{{ link }}" target="_blank" rel="noopener noreferrer" class="ms-2" title="Connect with me on Bluesky">
+                <i class="bi bi-chat-text"></i>
+              </a>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
       </p>
       <p>Published: <time datetime="{{ article.date.isoformat() }}">
         {{ article.locale_date }}

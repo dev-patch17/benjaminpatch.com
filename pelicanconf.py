@@ -32,8 +32,7 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-    ("You can add links in your config file", "#"),
-    ("Another social link", "#"),
+    ("Bluesky", "https://bsky.app/profile/benjaminpatch.com"),
 )
 
 DEFAULT_PAGINATION = 10
