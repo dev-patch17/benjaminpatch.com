@@ -1,10 +1,10 @@
 Title: Python Kickstart (part 3): Control Flow and Conditionals
-Date: 2025-07-31 12:35
+Date: 2025-07-31 13:58
 Category: AI in Practice
 Tags: python, python kickstart, best practices, open-source
 Slug: python-kickstart-p3-control-flow-conditionals
 Description: Master Python's control flow and conditionals to create dynamic programs that make intelligent decisions and execute repetitive tasks efficiently.
-Summary: Transform static code into intelligent programs with Python's control flow statements. Learn if/elif/else conditionals, for and while loops, and how to combine them for complex logic. Complete with practical examples using movie data and film analysis scenarios to reinforce key programming concepts.
+Summary: Transform static code into intelligent programs with Python's control flow statements. Learn if/elif/else conditionals, for and while loops, and how to combine them for complex logic. Complete with practical examples using movie data and film analysis scenarios to reinforce key programming concepts. Let's dive in!
 
 Welcome back to our Python Kickstart series! In [part 1](https://www.benjaminpatch.com/posts/2025/May/13/when-vibe-coding-fails-python-kickstart-p1/), we covered Python installation, variables, and basic concepts. In [part 2](https://www.benjaminpatch.com/posts/2025/Jul/09/python-kickstart-p2-data-types-structures/), we explored data types and data structures. Now we're ready to make our programs truly dynamic with control flow and conditionals.
 
